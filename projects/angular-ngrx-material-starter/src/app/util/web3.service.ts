@@ -250,7 +250,7 @@ private watchAccountUnlock() {
   console.log(this.web3.utils.toWei(this.web3.utils.toBN(balance).toString(), 'ether'),'toBN(1234)');
   console.log(this.web3.utils.toBN(balance).toString(),'toBN');
   
-return  await this.approveAndCall(this.web3.utils.toWei(this.web3.utils.toBN(balance).toString()),default_account,this.web3.utils.fromAscii(duration.toString()));
+  return  await this.approveAndCall(this.web3.utils.toWei(this.web3.utils.toBN(balance).toString()),default_account,this.web3.utils.hexToBytes(this.web3.utils.numberToHex(duration))); 
   
   //  await approve(balance);
   //  await staking_escrow.methods.deposit(balance, duration).send({'from': default_account});
