@@ -1,0 +1,56 @@
+<div class="">
+  <div class="gradient">
+    <div class="container">
+      <h1>{{ 'anms.title.long' | translate }}</h1>
+      <div class="row">
+        <div class="col-md-9"> </div>
+        <div class="col-md-3 " *ngIf="!isMetamaskConnected"> <button mat-raised-button (click)="openDialog()"
+            color="primary" class="btn-wallet ">Connect to a wallet</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-9"> </div>
+        <div class="col-md-3 img-dev" *ngIf="isMetamaskConnected">
+          <span class="img">
+            <img [src]="accImag" alt="" /> <span>
+              {{account.substring(0,10)}}....{{account.substring(account.length -5,account.length)}}
+            </span>
+          </span>
+
+        </div>
+      </div>
+      <ng-container>
+        <div class="box">
+          <mat-tab-group mat-align-tabs="center" class="tab-group">
+
+            <mat-tab label="STAKE">
+              <anms-stake (onSave)="saveStake($event)" [isMetamaskConnected]="isMetamaskConnected" class=" tab">
+              </anms-stake>
+            </mat-tab>
+            <mat-tab label="MANAGE">
+              <anms-manage (onSetWorker)="setWorker($event)" (onDetachWorker)="detachWorker()" (onReStake)="setReStake()"
+                (onWinddown)="winddown()" [isReStakeLocked]="isReStakeLocked" (onDivide)="divideStake($event)" (onProlong)="prolongStake($event)" [data]="subStakeList"></anms-manage>
+            </mat-tab>
+            <mat-tab label="WITHDRAW">
+              <anms-withdraw (onWithdraw)="withdraw($event)" [TokenToWithdraw]="TokenToWithdraw"  [data]="subStakeList"></anms-withdraw>
+            </mat-tab>
+          </mat-tab-group>
+          <div class="show-stakes">
+            <a href="#" (click)="fechSmartcontract()">
+              Check existing stakes
+            </a>
+          </div>
+          <anms-stake-list class="container" [data]="stakeList"></anms-stake-list>
+
+
+        </div>
+
+      </ng-container>
+
+
+    </div>
+  </div>
+</div>
+<div class="container">
+
+</div>

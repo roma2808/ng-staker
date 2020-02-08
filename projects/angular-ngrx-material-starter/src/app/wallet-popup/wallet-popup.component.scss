@@ -1,0 +1,118 @@
+.modal-window {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    display: none;
+    -webkit-overflow-scrolling: touch;
+    -moz-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+  }
+  .modal-window.active .window {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  .modal-window:before {
+    content: "";
+    display: inline-block;
+    min-height: inherit;
+    height: 100%;
+    vertical-align: middle;
+  }
+  .modal-window .window {
+    width: calc(100% - 10px);
+    max-width: 49.2rem;
+    background: #FFFFFF;
+    border: 1px solid #E8E8E8;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 1rem;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    padding-bottom: 11.5rem;
+    position: relative;
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: -webkit-transform 0.2s;
+    -o-transition: transform 0.2s;
+    transition: transform 0.2s;
+    transition: transform 0.2s, -webkit-transform 0.2s;
+    -webkit-transform: scale(0.4);
+    -ms-transform: scale(0.4);
+    transform: scale(0.4);
+  }
+  .modal-window .close-win {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-size: cover;
+    position: absolute;
+    top: 2.2rem;
+    right: 2.5rem;
+    cursor: pointer;
+    -webkit-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+  }
+  .modal-window .close-win:hover {
+    opacity: 0.5;
+  }
+  .modal-window .title-window {
+    font-size: 2.4rem;
+    line-height: 1.16em;
+    text-align: center;
+    padding: 6.5rem 1rem 3.9rem;
+    background: #F8F8F8;
+    border-radius: 1rem 1rem 0 0;
+    margin-bottom: 4.4rem;
+  }
+  .modal-window p {
+    font-size: 1.3rem;
+    line-height: 1.15em;
+    color: #575757;
+    text-align: center;
+    margin-bottom: 2.3rem;
+  }
+  .list-wallet {
+    max-width: 23.4rem;
+    margin: 0 auto;
+    font-size: 1.8rem;
+    color: #434343;
+  }
+  .list-wallet li {
+    margin-bottom: 1.5rem;
+   margin-right: 2rem;
+  }
+  .list-wallet li a {
+    display: block;
+    background: #FFFFFF;
+    border: 1px solid #AEAEAE;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 10px;
+    text-align: center;
+    padding: 1.5rem 1rem 1.5rem 4rem;
+    text-align: left;
+  }
+  .list-wallet li a:hover {
+    border-color: #2655FF;
+  }
+  .list-wallet li .img {
+    vertical-align: middle;
+    width: 3.7rem;
+    display: inline-block;
+  }
+  .list-wallet li img {
+    vertical-align: middle;
+  }
+
+  li {
+    list-style-type: none;
+}

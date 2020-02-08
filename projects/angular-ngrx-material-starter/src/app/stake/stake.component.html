@@ -1,0 +1,51 @@
+
+
+
+<div class="container">
+  <form [formGroup]="myForm" 
+  [ngClass]="routeAnimationsElements">
+  
+  <div class="row">
+    <mat-form-field class="col-md-6">
+      <input matInput placeholder="Stake amount (NU):"  type="number"
+        formControlName="amount" required>
+      <mat-error *ngIf="myForm.get('amount').hasError('required')">
+          Amount is required
+      </mat-error>
+      <mat-error *ngIf="myForm.get('amount').hasError('min')">
+          Amount must be equal/more than 15000 NU
+        
+      </mat-error>
+  
+    </mat-form-field>
+    <mat-form-field class="col-md-6">
+      <input matInput placeholder="Staking duration (days):" type="number"
+        formControlName="duration" required>
+      <mat-error *ngIf="myForm.get('duration').hasError('required')">
+          Duration is required
+     
+      </mat-error>
+      <mat-error *ngIf="myForm.get('duration').hasError('min')">
+          Duration must be equal/more than 30 days
+     
+      </mat-error>
+  
+    </mat-form-field>
+  </div>
+
+
+
+  <div class="row">
+    <div class="col-4 d-flex justify-content-between ">
+    
+   
+    </div>
+    <div class="col-6 d-flex justify-content-between ">
+      <button (click)="openDialog()" mat-raised-button color="primary" [disabled]="!(myForm.valid && isMetamaskConnected)" class="col-md-6 btn">
+        Stake
+          </button>
+   
+    </div>
+  </div>
+  </form>
+</div>

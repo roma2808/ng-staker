@@ -1,0 +1,221 @@
+<div class="container">
+
+  <mat-tab-group mat-align-tabs="center" class="tab-group">
+    <mat-tab label="set worker">
+      <form [formGroup]="myForm" class="example-form">
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width">
+              <mat-label>Worker Address</mat-label>
+              <input matInput formControlName="worker" placeholder="x0">
+              <mat-hint>Errors appear instantly!</mat-hint>
+
+              <mat-error *ngIf="myForm.get('worker').hasError('required')">
+                Address is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <div class="col-6 d-flex justify-content-between ">
+              <button (click)="setWorker()" mat-raised-button color="primary" [disabled]="!(myForm.valid)" style="    width: 100%;
+              padding-right: 0px;
+              padding-left: 0px;
+              top: 15px;"
+             >
+                Set Worker
+              </button>
+
+            </div>
+          </div>
+
+        </div>
+
+
+      </form>
+
+    </mat-tab>
+    <mat-tab label="detach worker"> <button (click)="detachWorker()" mat-raised-button color="primary" 
+  >
+      detach Worker
+     </button> </mat-tab>
+    <mat-tab label="re-stake"> 
+
+      <button (click)="restake()" mat-raised-button color="primary" *ngIf="!isReStakeLocked">   Enable
+      </button>
+      <button (click)="restake()" mat-raised-button color="primary"  *ngIf="isReStakeLocked">   disable
+      </button>
+
+    </mat-tab>
+    <mat-tab label="winddown">
+      
+      <button (click)="winddown()" mat-raised-button color="primary" >   Winddown
+      </button>
+  
+    </mat-tab>
+    <mat-tab label="prolong">   
+      
+      <form [formGroup]="prolongForm" class="example-form" style="margin-left: 50px;;" >
+        <div class="row">
+            <mat-form-field class="col-md-6">
+              <mat-label>Index</mat-label>
+              <input matInput formControlName="index" placeholder="0">
+              <mat-hint>Errors appear instantly!</mat-hint>
+
+              <mat-error *ngIf="prolongForm.get('index').hasError('required')">
+                Index is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-md-6">
+              <mat-label>Periods</mat-label>
+              <input matInput formControlName="periods" placeholder="0">
+              <mat-hint>Errors appear instantly!</mat-hint>
+
+              <mat-error *ngIf="prolongForm.get('periods').hasError('required')">
+                Periods is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+
+        
+  
+
+        </div>
+
+  <div class="col-md-6">
+    <button (click)="prolong()" mat-raised-button color="primary" [disabled]="!(prolongForm.valid)" class="col-md-6 ">
+      Prolong
+        </button>
+  </div>
+      </form>
+      
+      <div class="container">
+        <table class="table-hiden">
+          <thead>
+              <tr>
+                  <td>
+                    firstPeriod
+                  </td>
+                  <td>
+                    lastPeriod
+                  </td>
+                  <td>
+                    periods
+                  </td>
+                  <td>
+                    lockedValue
+                  </td>
+               
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let  item of data; let index">
+                
+                  <td>
+                     {{item?.firstPeriod}} 
+                  </td>
+                  <td>
+                      {{item?.lastPeriod}}    
+                  </td>
+                  <td>
+                      {{item?.periods}}      
+                  </td>
+                  <td>
+                      {{item?.lockedValue}}
+                  </td>
+              
+                 
+              </tr>
+          </tbody>
+      </table>
+      </div>
+      
+   </mat-tab>
+    <mat-tab label="divide Stake">   
+      
+      <form [formGroup]="dividForm" class="example-form" style="margin-left: 50px;;" >
+        <div class="row">
+            <mat-form-field class="col-md-8">
+              <mat-label>Index</mat-label>
+              <input matInput formControlName="index" placeholder="0">
+              <mat-hint>Errors appear instantly!</mat-hint>
+
+              <mat-error *ngIf="dividForm.get('index').hasError('required')">
+                Index is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-md-8">
+              <mat-label>Periods</mat-label>
+              <input matInput formControlName="periods" placeholder="0">
+              <mat-hint>Errors appear instantly!</mat-hint>
+
+              <mat-error *ngIf="dividForm.get('periods').hasError('required')">
+                Periods is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-md-8">
+              <mat-label>Amount</mat-label>
+              <input matInput formControlName="amount" placeholder="0">
+              <mat-hint>Errors appear instantly!</mat-hint>
+
+              <mat-error *ngIf="dividForm.get('periods').hasError('required')">
+                Amount is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+
+  
+
+        </div>
+<div>
+
+  <button (click)="divide()" mat-raised-button color="primary" [disabled]="!(dividForm.valid)" class="col-md-6 ">
+    Divide
+      </button>
+</div>
+  
+      </form>
+      
+      <div class="container">
+        <table class="table-hiden">
+          <thead>
+              <tr>
+                  <td>
+                    firstPeriod
+                  </td>
+                  <td>
+                    lastPeriod
+                  </td>
+                  <td>
+                    periods
+                  </td>
+                  <td>
+                    lockedValue
+                  </td>
+               
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let  item of data; let index">
+                
+                  <td>
+                     {{item?.firstPeriod}} 
+                  </td>
+                  <td>
+                      {{item?.lastPeriod}}    
+                  </td>
+                  <td>
+                      {{item?.periods}}      
+                  </td>
+                  <td>
+                      {{item?.lockedValue}}
+                  </td>
+              
+                 
+              </tr>
+          </tbody>
+      </table>
+      </div>
+    </mat-tab>
+
+  </mat-tab-group>
+  <!-- retake, winddown, set worker,  detach worker, prolong  -->
+
+</div>

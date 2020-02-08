@@ -1,0 +1,40 @@
+<h1 mat-dialog-title>  Welcome to
+
+  Stake Commander</h1>
+<div mat-dialog-content>
+  <p>  Connect your wallet 
+    to get started</p>
+
+</div>
+<mat-dialog-content class="mat-typography">
+  <ul class="list-wallet">
+        <li id ="metamask" (click)="onWalletSelect(1)">
+          <a href="#">
+            <span class="img">
+              <img [src]="metamask" alt=""/>
+            </span>
+            Metamask
+          </a>
+        </li>
+        <li (click)="onWalletSelect(2)">
+          <a href="#">
+            <span class="img">
+              <img [src]="ledger"alt=""/>
+            </span>
+            Ledger
+          </a>
+        </li>
+        <li (click)="onWalletSelect(3)">
+          <a href="#">
+            <span class="img">
+              <img [src]="keystore"alt=""/>         
+               </span>
+            Keystore
+          </a>
+
+        </li>
+      </ul>
+
+</mat-dialog-content>
+
+
