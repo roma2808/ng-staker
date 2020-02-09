@@ -10,11 +10,11 @@
           routerLinkActive="active">
           {{item.label | translate}}
         </a>
-    
+
       </mat-nav-list>
     </mat-sidenav>
 
-    <div class="wrapper">
+    <div class="wrapper mat-app-background">
 
       <div class="toolbar" [style.position]="(stickyHeader$ | async) ? 'fixed' : 'inherit'" [class.mat-elevation-z4]="(stickyHeader$ | async)">
         <mat-toolbar color="primary">
@@ -81,7 +81,7 @@
       </div>
 
       <div class="footer">
-      
+
 
       </div>
 
