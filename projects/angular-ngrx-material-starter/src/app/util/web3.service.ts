@@ -256,7 +256,13 @@ private watchAccountUnlock() {
   //  await staking_escrow.methods.deposit(balance, duration).send({'from': default_account});
    //await staking_escrow.methods.lock(balance, duration).send({'from': default_account});
   }
-  
+  async  setWindDown(status) {
+    const default_account = (await this.web3.eth.getAccounts())[0];
+    return new Promise(resolve => {
+        this.staking_escrow.methods.setWindDown(status).send({'from': default_account})
+        .once('transactionHash', function(hash) {resolve(true);});
+    });
+  }
   async  approve(amount) {
     const default_account = (await this.web3.eth.getAccounts())[0];
     return new Promise(resolve => {
