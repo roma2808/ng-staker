@@ -1,51 +1,60 @@
-
-
-
 <div class="container">
-  <form [formGroup]="myForm" 
+  <form [formGroup]="myForm"
   [ngClass]="routeAnimationsElements">
-  
+
   <div class="row">
     <mat-form-field class="col-md-6">
-      <input matInput placeholder="Stake amount (NU):"  type="number"
-        formControlName="amount" required>
+      <input
+        matInput
+        placeholder="Enter stake amount (NU):"
+        formControlName="amount"
+        required>
       <mat-error *ngIf="myForm.get('amount').hasError('required')">
           Amount is required
       </mat-error>
       <mat-error *ngIf="myForm.get('amount').hasError('min')">
           Amount must be equal/more than 15000 NU
-        
       </mat-error>
-  
+
     </mat-form-field>
     <mat-form-field class="col-md-6">
-      <input matInput placeholder="Staking duration (days):" type="number"
-        formControlName="duration" required>
+      <input
+        matInput
+        placeholder="Stakind duration (days):"
+        formControlName="duration"
+        required>
       <mat-error *ngIf="myForm.get('duration').hasError('required')">
           Duration is required
-     
+
       </mat-error>
       <mat-error *ngIf="myForm.get('duration').hasError('min')">
           Duration must be equal/more than 30 days
-     
+
       </mat-error>
-  
+
     </mat-form-field>
   </div>
 
-
-
-  <div class="row">
-    <div class="col-4 d-flex justify-content-between ">
-    
-   
-    </div>
-    <div class="col-6 d-flex justify-content-between ">
-      <button (click)="openDialog()" mat-raised-button color="primary" [disabled]="!(myForm.valid && isMetamaskConnected)" class="col-md-6 btn">
-        Stake
-          </button>
-   
-    </div>
+  <div class="mt-5 mb-3">
+    <button
+      (click)="openDialog()"
+      mat-stroked-button
+      color="primary"
+      class="btn btn-rounded btn-small">
+      Show existing stakes
+    </button>
   </div>
+
+  <div class="mt-3">
+    <button
+      (click)="openDialog()"
+      mat-raised-button
+      color="primary"
+      [disabled]="!(myForm.valid && isMetamaskConnected)"
+      class="btn btn-rounded pt-2 pb-2 pl-5 pr-5">
+      Stake it!
+    </button>
+  </div>
+
   </form>
 </div>
