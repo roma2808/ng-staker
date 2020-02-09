@@ -1,4 +1,6 @@
-$anms-light-primary: mat-palette($mat-grey, 200, 500, 300);
+@import './_colors';
+
+$anms-light-primary: mat-palette($md-blue);
 $anms-light-accent: mat-palette($mat-brown, 200);
 $anms-light-warn: mat-palette($mat-deep-orange, 200);
 
