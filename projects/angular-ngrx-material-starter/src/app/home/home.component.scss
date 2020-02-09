@@ -1,52 +1,20 @@
 @import '../../styles-variables.scss';
 
-h1 {
-  text-align: center;
-  font-size: 3em;
-  text-transform: uppercase;
-}
 .img-dev {
   vertical-align: middle;
   padding: 2rem 1rem 1rem;
   border-radius: 10px;
 }
-.btn-wallet {
-  vertical-align: middle;
-  padding: 0.5rem ;
-  margin-top: 0.5rem ;
-  border-radius: 10px;
-  width:100%;
-}
-// mat-tab-group{
-//   width:80%;
-//   // border: 1px solid gray;
-//   // border-radius: 50px;
-// }
+
 .tab{
   margin-top: 30px;
-
 }
+
 .tab-group{
-  padding-top: -30px;
+  max-width: 600px;
+  margin: 5em auto;
 }
-.box {
-     display: block;
-    background: #FFFFFF;
-    border: 1px solid #AEAEAE;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    border-radius: 20px;
-    padding: 1rem 1rem 0.5rem;
-margin-top: 30px;
-    text-align: center;
 
-}
-.mat-tab-label-container{
-  
-}
-.mat-tab-labels{
-
-}
 .img {
   display: block;
   background: rgb(219, 215, 215);

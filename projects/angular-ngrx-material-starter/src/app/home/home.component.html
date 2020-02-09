@@ -1,11 +1,12 @@
 <div class="">
   <div class="gradient">
     <div class="container">
-      <h1>{{ 'anms.title.long' | translate }}</h1>
-      <div class="row">
+      <div class="row mt-5">
         <div class="col-md-9"> </div>
-        <div class="col-md-3 " *ngIf="!isMetamaskConnected"> <button mat-raised-button (click)="openDialog()"
-            color="primary" class="btn-wallet ">Connect to a wallet</button>
+        <div class="col-md-3 " *ngIf="!isMetamaskConnected">
+          <button mat-raised-button (click)="openDialog()"
+            class="btn btn-rounded btn-small"
+            color="primary">Connect to a wallet</button>
         </div>
       </div>
       <div class="row">
@@ -20,7 +21,7 @@
         </div>
       </div>
       <ng-container>
-        <div class="box">
+        <div>
           <mat-tab-group mat-align-tabs="center" class="tab-group">
 
             <mat-tab label="STAKE">
