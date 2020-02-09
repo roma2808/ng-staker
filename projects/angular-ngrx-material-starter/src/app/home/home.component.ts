@@ -14,7 +14,7 @@ import { WalletPopupComponent } from '../wallet-popup/wallet-popup.component';
 export class HomeComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
   accImag = require('../../assets/img/diagrama.svg');
-  balance: number;
+  balance: any;
   stakeList:{ worker: any; staker: string; value: number; period: any; };
   subStakeIndex;
   subStakeList: any[];
@@ -44,8 +44,8 @@ export class HomeComponent implements OnInit {
   this.isMetamaskConnected=true;
   this.account=await this.web3.refreshAccounts();
   console.log(  this.account,'  this.account');
- const amount= await this.web3.getBlance(this.account);
-  this.balance=parseFloat (amount.toLocaleString())/10^18;
+ this.balance= await this.web3.getBlance(this.account);
+  // this.balance=parseFloat (amount.toLocaleString())/10^18;
  }
       }
     });

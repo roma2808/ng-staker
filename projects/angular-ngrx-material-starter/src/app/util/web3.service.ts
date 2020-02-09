@@ -232,8 +232,8 @@ private watchAccountUnlock() {
    const data= await   this.token.methods.balanceOf(address)
         .call();
         console.log(data,'balanceOf');
-        
-        resolve(data);
+        const fromWei = this.web3.utils.fromWei(data,'ether')
+        resolve(fromWei);
     });
 }
 //Withdraw reward,  retake, winddown, set worker,  detach worker, prolong "which I will start work on them 
