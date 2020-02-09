@@ -56,3 +56,17 @@
   @include angular-material-theme($anms-nature-theme);
   @include custom-components-theme($anms-nature-theme);
 }
+
+button.btn {
+  padding: 0 2.5em;
+  line-height: 2.15;
+  font-weight: 400;
+
+  &.btn-rounded {
+    border-radius: 2em;
+  }
+
+  &.btn-small {
+    font-size: 0.7222em;
+  }
+}
