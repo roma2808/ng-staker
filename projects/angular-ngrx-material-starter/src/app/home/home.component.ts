@@ -65,7 +65,7 @@ this.isReStakeLocked= stakes['reStakeDisabled']
 this.stakeList = {
 worker:stakes['worker'],
 staker:this.account,
-value:parseFloat (stakes['value'])/10^18,
+value:stakes['value'],//parseFloat (stakes['value'])/10^18,
 period:stakes['worker']
 }
 
