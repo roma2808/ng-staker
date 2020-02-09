@@ -23,6 +23,7 @@
 @import './app/features/examples/theming/parent/parent.component.scss-theme';
 @import './app/features/examples/theming/child/child.component.scss-theme';
 @import './app/features/examples/examples/examples.component.scss-theme';
+@import './app/stake-list/stake-list.component.scss-theme';
 
 @mixin custom-components-theme($theme) {
   @include anms-styles-reset-theme($theme);
@@ -35,6 +36,7 @@
   @include anms-parent-component-theme($theme);
   @include anms-child-component-theme($theme);
   @include anms-examples-component-theme($theme);
+  @include anms-stake-list-component-theme($theme);
 }
 
 .default-theme {

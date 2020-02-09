@@ -1,0 +1,18 @@
+@import '~@angular/material/theming';
+
+@mixin anms-stake-list-component-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  anms-stake-list {
+    thead {
+      tr {
+        td {
+          background-color: mat-color($background, table-header);
+        }
+      }
+    }
+  }
+}

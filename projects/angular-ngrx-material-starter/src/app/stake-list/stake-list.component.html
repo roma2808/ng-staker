@@ -1,27 +1,36 @@
-<table class="table-hiden">
+<table>
     <thead>
         <tr>
             <td>
-                Staker
+                Stake #
             </td>
             <td>
-                Worker
+                STAKER
             </td>
             <td>
-                Value
+                WORKER
             </td>
             <td>
-                Duration
+                VALUE
+            </td>
+            <td>
+                DURATION
+            </td>
+            <td>
+                Ending
             </td>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>
-                {{data?.staker?.substring(0,10)}}....{{data?.staker.substring(data?.staker?.length -5,data?.staker?.length)}} 
+
             </td>
             <td>
-                {{data?.worker?.substring(0,10)}}....{{data?.worker.substring(data?.worker?.length -5,data?.worker?.length)}} 
+                {{data?.staker?.substring(0,10)}}....{{data?.staker.substring(data?.staker?.length -5,data?.staker?.length)}}
+            </td>
+            <td>
+                {{data?.worker?.substring(0,10)}}....{{data?.worker.substring(data?.worker?.length -5,data?.worker?.length)}}
 
             </td>
             <td>
@@ -29,6 +38,9 @@
             </td>
             <td>
                 {{30}}
+            </td>
+            <td>
+
             </td>
         </tr>
     </tbody>
