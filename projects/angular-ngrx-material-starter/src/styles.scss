@@ -2,6 +2,8 @@
 
 @import '~bootstrap/scss/bootstrap-reboot';
 @import '~bootstrap/scss/bootstrap-grid';
+@import '~bootstrap/scss/utilities/_flex';
+@import '~bootstrap/scss/utilities/_text';
 @import 'styles-reset';
 
 @import '~@angular/material/theming';
@@ -14,6 +16,7 @@
 @import './themes/nature-theme';
 
 @import 'styles-reset.scss-theme';
+@import 'styles-typography.scss';
 @import './app/app/app.component.scss-theme';
 @import './app/shared/big-input/big-input/big-input.component.scss-theme';
 @import './app/features/about/about/about.component.scss-theme';
@@ -23,6 +26,7 @@
 @import './app/features/examples/theming/parent/parent.component.scss-theme';
 @import './app/features/examples/theming/child/child.component.scss-theme';
 @import './app/features/examples/examples/examples.component.scss-theme';
+@import './app/stake/stake.component.scss-theme';
 @import './app/stake-list/stake-list.component.scss-theme';
 @import './app/wallet-popup/wallet-popup.component.scss-theme';
 
@@ -37,6 +41,7 @@
   @include anms-parent-component-theme($theme);
   @include anms-child-component-theme($theme);
   @include anms-examples-component-theme($theme);
+  @include anms-stake-component-theme($theme);
   @include anms-stake-list-component-theme($theme);
   @include anms-wallet-popup-component-theme($theme);
 }
@@ -60,6 +65,8 @@
   @include angular-material-theme($anms-nature-theme);
   @include custom-components-theme($anms-nature-theme);
 }
+
+@include angular-material-typography($anms-typography);
 
 anms-root[aria-hidden="true"] .content {
   filter: grayscale(1);
