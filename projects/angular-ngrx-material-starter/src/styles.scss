@@ -29,6 +29,7 @@
 @import './app/stake/stake.component.scss-theme';
 @import './app/stake-list/stake-list.component.scss-theme';
 @import './app/wallet-popup/wallet-popup.component.scss-theme';
+@import './app/manage/manage.component.scss-theme';
 
 @mixin custom-components-theme($theme) {
   @include anms-styles-reset-theme($theme);
@@ -44,6 +45,7 @@
   @include anms-stake-component-theme($theme);
   @include anms-stake-list-component-theme($theme);
   @include anms-wallet-popup-component-theme($theme);
+  @include anms-manage-component-theme($theme);
 }
 
 .default-theme {

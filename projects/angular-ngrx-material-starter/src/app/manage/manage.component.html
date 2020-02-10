@@ -1,44 +1,42 @@
-<div class="container">
+<div class="container p-0">
 
-  <mat-tab-group mat-align-tabs="center" class="tab-group">
-    <mat-tab label="set worker">
+  <mat-tab-group mat-align-tabs="center" class="tab-group tab-group__small mt-3">
+    <mat-tab label="Set worker">
       <form [formGroup]="myForm" class="example-form">
-        <div class="row">
-          <div class="col-md-6">
-            <mat-form-field class="example-full-width">
-              <mat-label>Worker Address</mat-label>
-              <input matInput formControlName="worker" placeholder="x0">
-              <mat-hint>Errors appear instantly!</mat-hint>
+        <div>
 
-              <mat-error *ngIf="myForm.get('worker').hasError('required')">
-                Address is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Enter worker address</mat-label>
+            <input matInput formControlName="worker" placeholder="x0">
+            <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+            <mat-error *ngIf="myForm.get('worker').hasError('required')">
+              Address is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <div class="text-center">
+            <small>Worker can be replaced or detached after 2 periods.</small>
           </div>
-          <div class="col-md-6">
-            <div class="col-6 d-flex justify-content-between ">
-              <button (click)="setWorker()" mat-raised-button color="primary" [disabled]="!(myForm.valid)" style="    width: 100%;
-              padding-right: 0px;
-              padding-left: 0px;
-              top: 15px;"
-             >
-                Set Worker
-              </button>
 
-            </div>
+          <div class="d-flex justify-content-center mt-4">
+            <button
+              (click)="setWorker()"
+              mat-raised-button color="primary"
+              [disabled]="!(myForm.valid)"
+              class="btn btn-rounded pt-1 pb-1 pl-5 pr-5">
+              Confirm
+            </button>
           </div>
 
         </div>
-
-
       </form>
 
     </mat-tab>
-    <mat-tab label="detach worker"> <button (click)="detachWorker()" mat-raised-button color="primary" 
+    <mat-tab label="Detach worker"> <button (click)="detachWorker()" mat-raised-button color="primary"
   >
       detach Worker
      </button> </mat-tab>
-    <mat-tab label="re-stake"> 
+    <mat-tab label="Re-stake">
 
       <button (click)="restake()" mat-raised-button color="primary" *ngIf="!isReStakeLocked">   Enable
       </button>
@@ -46,14 +44,14 @@
       </button>
 
     </mat-tab>
-    <mat-tab label="winddown">
-      
+    <mat-tab label="Winddown">
+
       <button (click)="winddown()" mat-raised-button color="primary" >   Winddown
       </button>
-  
+
     </mat-tab>
-    <mat-tab label="prolong">   
-      
+    <mat-tab label="Prolong">
+
       <form [formGroup]="prolongForm" class="example-form" style="margin-left: 50px;;" >
         <div class="row">
             <mat-form-field class="col-md-6">
@@ -75,8 +73,8 @@
               </mat-error>
             </mat-form-field>
 
-        
-  
+
+
 
         </div>
 
@@ -86,7 +84,7 @@
         </button>
   </div>
       </form>
-      
+
       <div class="container">
         <table class="table-hiden">
           <thead>
@@ -103,34 +101,34 @@
                   <td>
                     lockedValue
                   </td>
-               
+
               </tr>
           </thead>
           <tbody>
               <tr *ngFor="let  item of data; let index">
-                
+
                   <td>
-                     {{item?.firstPeriod}} 
+                     {{item?.firstPeriod}}
                   </td>
                   <td>
-                      {{item?.lastPeriod}}    
+                      {{item?.lastPeriod}}
                   </td>
                   <td>
-                      {{item?.periods}}      
+                      {{item?.periods}}
                   </td>
                   <td>
                       {{item?.lockedValue}}
                   </td>
-              
-                 
+
+
               </tr>
           </tbody>
       </table>
       </div>
-      
+
    </mat-tab>
-    <mat-tab label="divide Stake">   
-      
+    <mat-tab label="Divide">
+
       <form [formGroup]="dividForm" class="example-form" style="margin-left: 50px;;" >
         <div class="row">
             <mat-form-field class="col-md-8">
@@ -161,7 +159,7 @@
               </mat-error>
             </mat-form-field>
 
-  
+
 
         </div>
 <div>
@@ -170,9 +168,9 @@
     Divide
       </button>
 </div>
-  
+
       </form>
-      
+
       <div class="container">
         <table class="table-hiden">
           <thead>
@@ -189,26 +187,26 @@
                   <td>
                     lockedValue
                   </td>
-               
+
               </tr>
           </thead>
           <tbody>
               <tr *ngFor="let  item of data; let index">
-                
+
                   <td>
-                     {{item?.firstPeriod}} 
+                     {{item?.firstPeriod}}
                   </td>
                   <td>
-                      {{item?.lastPeriod}}    
+                      {{item?.lastPeriod}}
                   </td>
                   <td>
-                      {{item?.periods}}      
+                      {{item?.periods}}
                   </td>
                   <td>
                       {{item?.lockedValue}}
                   </td>
-              
-                 
+
+
               </tr>
           </tbody>
       </table>

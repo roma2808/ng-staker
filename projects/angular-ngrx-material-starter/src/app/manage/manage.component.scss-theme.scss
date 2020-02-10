@@ -1,0 +1,21 @@
+@import '~@angular/material/theming';
+
+@mixin anms-manage-component-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  .tab-group__small {
+    .mat-tab-header {
+      border-bottom: 0;
+
+      .mat-tab-label, .mat-tab-link {
+        font-size: 13px;
+        padding: 0;
+        min-width: 100px;
+        font-weight: 400;
+      }
+    }
+  }
+}
