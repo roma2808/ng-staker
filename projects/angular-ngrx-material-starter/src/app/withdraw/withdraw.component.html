@@ -1,35 +1,42 @@
 <form [formGroup]="myForm" class="example-form">
-    <div class="row">
+  <div class="d-flex flex-column justify-content-center align-items-center">
+
+    <div class="text-center mt-5">
+      <small>Staking rewards: <span class="text-primary">3000</span> NU</small>
+      <br>
+      <small>Policy rewards: <span class="text-primary">0.01</span> ETH</small>
+    </div>
+
+    <mat-form-field class="example-full-width col-md-6 mt-4">
+      <mat-label>Withdraw amount (NU):</mat-label>
+      <input matInput formControlName="amount" placeholder="0.0">
+      <mat-hint>Errors appear instantly!</mat-hint>
+
+      <mat-error *ngIf="myForm.get('amount').hasError('required')">
+        Amount is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <button
+      (click)="withdraw()"
+      mat-raised-button
+      color="primary"
+      [disabled]="!(myForm.valid)"
+      class="btn btn-rounded pt-1 pb-1 pl-5 pr-5 mt-4">
+      Confirm
+    </button>
+
+  </div>
+
+    <!-- <div class="row">
       <div class="col-md-6">
         <label>Max token to withdraw {{TokenToWithdraw}}</label>
-        <mat-form-field class="example-full-width">
-          <mat-label>Amount</mat-label>
-          <input matInput formControlName="amount" placeholder="0.0">
-          <mat-hint>Errors appear instantly!</mat-hint>
-
-          <mat-error *ngIf="myForm.get('amount').hasError('required')">
-            Amount is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
       </div>
-      <div class="col-md-6">
-        <div class="col-6 d-flex justify-content-between ">
-          <button (click)="withdraw()" mat-raised-button color="primary" [disabled]="!(myForm.valid)" style="    width: 100%;
-          padding-right: 0px;
-          padding-left: 0px;
-          top: 25px;"
-           >
-           Withdraw
-          </button>
-
-        </div>
-      </div>
-
-    </div>
+    </div> -->
 
 
   </form>
-  
+
   <!-- <div class="container">
     <table class="table-hiden">
       <thead>
@@ -46,26 +53,26 @@
               <td>
                 lockedValue
               </td>
-           
+
           </tr>
       </thead>
       <tbody>
           <tr *ngFor="let  item of data; let index">
-            
+
               <td>
-                 {{item?.firstPeriod}} 
+                 {{item?.firstPeriod}}
               </td>
               <td>
-                  {{item?.lastPeriod}}    
+                  {{item?.lastPeriod}}
               </td>
               <td>
-                  {{item?.periods}}      
+                  {{item?.periods}}
               </td>
               <td>
                   {{item?.lockedValue}}
               </td>
-          
-             
+
+
           </tr>
       </tbody>
   </table>

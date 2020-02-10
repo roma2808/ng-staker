@@ -33,7 +33,7 @@
 
     </mat-tab>
     <mat-tab label="Detach worker">
-      <form [formGroup]="myForm2" class="example-form">
+      <form [formGroup]="myForm" class="example-form">
         <div class="d-flex flex-column justify-content-center align-items-center">
           <!-- <button
             (click)="detachWorker()"
@@ -48,7 +48,7 @@
           <mat-form-field class="example-full-width">
             <mat-label>Set new worker address</mat-label>
             <input matInput formControlName="worker" placeholder="x0">
-            <mat-error *ngIf="myForm2.get('worker').hasError('required')">
+            <mat-error *ngIf="myForm.get('worker').hasError('required')">
               Address is <strong>required</strong>
             </mat-error>
           </mat-form-field>
@@ -56,7 +56,7 @@
           <button
             (click)="setWorker()"
             mat-raised-button color="primary"
-            [disabled]="!(myForm2.valid)"
+            [disabled]="!(myForm.valid)"
             class="btn btn-rounded pt-1 pb-1 pl-5 pr-5 mt-4">
             Confirm
           </button>
@@ -66,54 +66,108 @@
     </mat-tab>
     <mat-tab label="Re-stake">
 
-      <button (click)="restake()" mat-raised-button color="primary" *ngIf="!isReStakeLocked">   Enable
-      </button>
-      <button (click)="restake()" mat-raised-button color="primary"  *ngIf="isReStakeLocked">   disable
-      </button>
+      <form [formGroup]="myForm" class="example-form">
+        <div class="d-flex flex-column justify-content-center align-items-center">
+
+          <div class="text-center mt-2">
+            <small>Re-staking for 0x0000....0000: <span class="text-primary">No</span></small>
+          </div>
+
+          <button
+            (click)="restake()"
+            mat-raised-button
+            color="primary"
+            *ngIf="!isReStakeLocked">
+            Enable
+          </button>
+
+          <button
+            (click)="restake()"
+            mat-raised-button
+            color="primary"
+            *ngIf="isReStakeLocked">
+            disable
+          </button>
+
+          <button
+            (click)="setWorker()"
+            mat-raised-button
+            color="primary"
+            [disabled]="!(myForm.valid)"
+            class="btn btn-rounded pt-1 pb-1 pl-5 pr-5 mt-4">
+            Confirm
+          </button>
+
+        </div>
+      </form>
 
     </mat-tab>
-    <mat-tab label="Winddown">
+    <mat-tab label="Wind-down">
 
-      <button (click)="winddown()" mat-raised-button color="primary" >   Winddown
-      </button>
+      <form [formGroup]="myForm" class="example-form">
+        <div class="d-flex flex-column justify-content-center align-items-center">
+
+          <div class="text-center mt-2">
+            <small>Wind-down for 0x0000....0000: <span class="text-primary">No</span></small>
+          </div>
+
+          <button
+            (click)="winddown()"
+            mat-raised-button color="primary" >
+            Winddown
+          </button>
+
+          <button
+            (click)="setWorker()"
+            mat-raised-button
+            color="primary"
+            [disabled]="!(myForm.valid)"
+            class="btn btn-rounded pt-1 pb-1 pl-5 pr-5 mt-4">
+            Confirm
+          </button>
+
+        </div>
+      </form>
 
     </mat-tab>
     <mat-tab label="Prolong">
 
-      <form [formGroup]="prolongForm" class="example-form" style="margin-left: 50px;;" >
-        <div class="row">
-            <mat-form-field class="col-md-6">
-              <mat-label>Index</mat-label>
-              <input matInput formControlName="index" placeholder="0">
-              <mat-hint>Errors appear instantly!</mat-hint>
+      <form [formGroup]="prolongForm" class="example-form">
+        <div class="d-flex flex-column justify-content-center align-items-center">
 
-              <mat-error *ngIf="prolongForm.get('index').hasError('required')">
-                Index is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
-            <mat-form-field class="col-md-6">
-              <mat-label>Periods</mat-label>
-              <input matInput formControlName="periods" placeholder="0">
-              <mat-hint>Errors appear instantly!</mat-hint>
+          <mat-form-field class="col-md-6">
+            <mat-label>Index</mat-label>
+            <input matInput formControlName="index" placeholder="0">
+            <mat-hint>Errors appear instantly!</mat-hint>
 
-              <mat-error *ngIf="prolongForm.get('periods').hasError('required')">
-                Periods is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
+            <mat-error *ngIf="prolongForm.get('index').hasError('required')">
+              Index is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
 
+          <mat-form-field class="col-md-8">
+            <mat-label>Prolong duration (periods)</mat-label>
+            <input matInput formControlName="periods" placeholder="0">
+            <mat-hint>Errors appear instantly!</mat-hint>
 
+            <mat-error *ngIf="prolongForm.get('periods').hasError('required')">
+              Periods is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
 
+          <button
+            (click)="prolong()"
+            mat-raised-button
+            color="primary"
+            [disabled]="!(prolongForm.valid)"
+            class="btn btn-rounded pt-1 pb-1 pl-5 pr-5 mt-4">
+            Confirm
+          </button>
 
         </div>
-
-  <div class="col-md-6">
-    <button (click)="prolong()" mat-raised-button color="primary" [disabled]="!(prolongForm.valid)" class="col-md-6 ">
-      Prolong
-        </button>
-  </div>
       </form>
 
-      <div class="container">
+      <!-- <div class="container">
         <table class="table-hiden">
           <thead>
               <tr>
@@ -152,54 +206,55 @@
               </tr>
           </tbody>
       </table>
-      </div>
+      </div> -->
 
    </mat-tab>
     <mat-tab label="Divide">
 
-      <form [formGroup]="dividForm" class="example-form" style="margin-left: 50px;;" >
-        <div class="row">
-            <mat-form-field class="col-md-8">
-              <mat-label>Index</mat-label>
-              <input matInput formControlName="index" placeholder="0">
-              <mat-hint>Errors appear instantly!</mat-hint>
+      <form [formGroup]="dividForm" class="example-form">
+        <div class="d-flex flex-column justify-content-center align-items-center">
 
-              <mat-error *ngIf="dividForm.get('index').hasError('required')">
-                Index is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
-            <mat-form-field class="col-md-8">
-              <mat-label>Periods</mat-label>
-              <input matInput formControlName="periods" placeholder="0">
-              <mat-hint>Errors appear instantly!</mat-hint>
+          <mat-form-field class="col-md-6">
+            <mat-label>Substake index</mat-label>
+            <input matInput formControlName="index" placeholder="0">
+            <mat-hint>Errors appear instantly!</mat-hint>
 
-              <mat-error *ngIf="dividForm.get('periods').hasError('required')">
-                Periods is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
-            <mat-form-field class="col-md-8">
-              <mat-label>Amount</mat-label>
-              <input matInput formControlName="amount" placeholder="0">
-              <mat-hint>Errors appear instantly!</mat-hint>
+            <mat-error *ngIf="dividForm.get('index').hasError('required')">
+              Index is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="col-md-6">
+            <mat-label>Period</mat-label>
+            <input matInput formControlName="periods" placeholder="0">
+            <mat-hint>Errors appear instantly!</mat-hint>
 
-              <mat-error *ngIf="dividForm.get('periods').hasError('required')">
-                Amount is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
+            <mat-error *ngIf="dividForm.get('periods').hasError('required')">
+              Periods is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="col-md-6">
+            <mat-label>Amount</mat-label>
+            <input matInput formControlName="amount" placeholder="0">
+            <mat-hint>Errors appear instantly!</mat-hint>
 
+            <mat-error *ngIf="dividForm.get('periods').hasError('required')">
+              Amount is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
 
+          <button
+            (click)="divide()"
+            mat-raised-button
+            color="primary"
+            [disabled]="!(dividForm.valid)"
+            class="btn btn-rounded pt-1 pb-1 pl-5 pr-5 mt-4">
+            Confirm
+          </button>
 
         </div>
-<div>
-
-  <button (click)="divide()" mat-raised-button color="primary" [disabled]="!(dividForm.valid)" class="col-md-6 ">
-    Divide
-      </button>
-</div>
-
       </form>
 
-      <div class="container">
+      <!-- <div class="container">
         <table class="table-hiden">
           <thead>
               <tr>
@@ -238,7 +293,7 @@
               </tr>
           </tbody>
       </table>
-      </div>
+      </div> -->
     </mat-tab>
 
   </mat-tab-group>
