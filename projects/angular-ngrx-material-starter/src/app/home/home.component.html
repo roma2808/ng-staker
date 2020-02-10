@@ -53,6 +53,11 @@
 
       </ng-container>
 
+      <mat-slide-toggle
+        [(ngModel)]="checked"
+        (change)="changeTheme()"
+        class="theme-toggle">
+      </mat-slide-toggle>
 
     </div>
   </div>
