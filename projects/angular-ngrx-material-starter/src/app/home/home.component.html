@@ -21,7 +21,7 @@
         </div>
       </div>
       <ng-container>
-        <div>
+        <div class="inner-container">
           <mat-tab-group mat-align-tabs="center" class="tab-group">
 
             <mat-tab label="STAKE">
@@ -36,7 +36,7 @@
               <anms-withdraw (onWithdraw)="withdraw($event)" [TokenToWithdraw]="TokenToWithdraw"  [data]="subStakeList"></anms-withdraw>
             </mat-tab>
           </mat-tab-group>
-          <div class="show-stakes">
+          <!-- <div class="show-stakes">
             <a href="#" (click)="fechSmartcontract()">
               Check existing stakes
             </a>
@@ -45,10 +45,16 @@
             <p >
               Balance {{balance}} NU
             </p>
+          </div> -->
+          <div class="text-center">
+            <small>Active stakes:</small>
           </div>
           <anms-stake-list class="container" [data]="stakeList"></anms-stake-list>
 
-
+          <div class="d-flex justify-content-center">
+            <small class="ml-3 mr-3">Staking Guide</small>
+            <small class="ml-3 mr-3">About Nucypher</small>
+          </div>
         </div>
 
       </ng-container>
