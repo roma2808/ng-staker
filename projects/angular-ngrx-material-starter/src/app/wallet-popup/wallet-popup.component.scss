@@ -83,30 +83,25 @@
   .list-wallet {
     max-width: 23.4rem;
     margin: 0 auto;
-    font-size: 1.8rem;
-    color: #434343;
+    padding: 1em 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .list-wallet li {
-    margin-bottom: 1.5rem;
-   margin-right: 2rem;
+    margin: 0.5em;
+    width: 12em;
   }
   .list-wallet li a {
     display: block;
-    background: #FFFFFF;
-    border: 1px solid #AEAEAE;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border-radius: 10px;
     text-align: center;
-    padding: 1.5rem 1rem 1.5rem 4rem;
+    padding: 1rem 1.5rem;
     text-align: left;
-  }
-  .list-wallet li a:hover {
-    border-color: #2655FF;
   }
   .list-wallet li .img {
     vertical-align: middle;
-    width: 3.7rem;
     display: inline-block;
   }
   .list-wallet li img {

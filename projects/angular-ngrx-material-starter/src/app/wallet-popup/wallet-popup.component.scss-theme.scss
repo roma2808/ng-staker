@@ -1,0 +1,38 @@
+@import '~@angular/material/theming';
+
+@mixin anms-wallet-popup-component-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  mat-dialog-container {
+    padding: 16px 16px 0;
+    width: 460px;
+
+    .mat-dialog-title {
+      margin-bottom: 16px;
+      line-height: 1;
+      text-align: right;
+
+      mat-icon {
+        font-size: 1em;
+        width: 1em;
+        height: 1em;
+      }
+    }
+  }
+
+  mat-dialog-content {
+    margin: 0 -16px;
+    padding: 3em 1em 7em;
+    text-align: center;
+    background-color: mat-color($background, dialog-content);
+
+    .list-wallet {
+      li a {
+        background-color: mat-color($background, list-wallet);
+      }
+    }
+  }
+}

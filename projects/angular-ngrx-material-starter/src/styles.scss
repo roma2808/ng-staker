@@ -24,6 +24,7 @@
 @import './app/features/examples/theming/child/child.component.scss-theme';
 @import './app/features/examples/examples/examples.component.scss-theme';
 @import './app/stake-list/stake-list.component.scss-theme';
+@import './app/wallet-popup/wallet-popup.component.scss-theme';
 
 @mixin custom-components-theme($theme) {
   @include anms-styles-reset-theme($theme);
@@ -37,6 +38,7 @@
   @include anms-child-component-theme($theme);
   @include anms-examples-component-theme($theme);
   @include anms-stake-list-component-theme($theme);
+  @include anms-wallet-popup-component-theme($theme);
 }
 
 .default-theme {
@@ -59,6 +61,10 @@
   @include custom-components-theme($anms-nature-theme);
 }
 
+anms-root[aria-hidden="true"] .content {
+  filter: grayscale(1);
+}
+
 button.btn {
   padding: 0 2.5em;
   line-height: 2.15;
@@ -71,4 +77,8 @@ button.btn {
   &.btn-small {
     font-size: 0.7222em;
   }
+}
+
+.cdk-overlay-dark-backdrop {
+  background: rgba(205, 205, 205, 0.1);
 }

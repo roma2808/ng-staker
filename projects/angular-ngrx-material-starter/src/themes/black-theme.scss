@@ -8,7 +8,7 @@ $mat-dark-theme-background: (
   status-bar: black,
   app-bar:    map_get($mat-grey, 900),
   background: #0A0D0E,
-  hover:      rgba(white, 0.04), // TODO(kara): check style with Material Design UX
+  hover:      rgba(white, 0.04),
   card:       map_get($mat-grey, 800),
   dialog:     map_get($mat-grey, 800),
   disabled-button: rgba(white, 0.12),
@@ -20,6 +20,8 @@ $mat-dark-theme-background: (
   unselected-chip: map_get($mat-grey, 700),
   disabled-list-option: black,
   table-header: #000,
+  dialog-content: #000,
+  list-wallet: #242424,
 );
 
 $anms-black-theme: mat-dark-theme(

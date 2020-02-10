@@ -1,12 +1,8 @@
-<h1 mat-dialog-title>  Welcome to
-
-  Stake Commander</h1>
-<div mat-dialog-content>
-  <p>  Connect your wallet 
-    to get started</p>
-
+<div mat-dialog-title>
+  <mat-icon aria-hidden="false">close</mat-icon>
 </div>
 <mat-dialog-content class="mat-typography">
+  <p>Connect a wallet to get started</p>
   <ul class="list-wallet">
         <li id ="metamask" (click)="onWalletSelect(1)">
           <a href="#">
@@ -18,18 +14,20 @@
         </li>
         <li (click)="onWalletSelect(2)">
           <a href="#">
-            <span class="img">
+            <span class="img"></span>
+            <!-- <span class="img">
               <img [src]="ledger"alt=""/>
             </span>
-            Ledger
+            Ledger -->
           </a>
         </li>
         <li (click)="onWalletSelect(3)">
           <a href="#">
-            <span class="img">
-              <img [src]="keystore"alt=""/>         
+            <span class="img"></span>
+            <!-- <span class="img">
+              <img [src]="keystore"alt=""/>
                </span>
-            Keystore
+            Keystore -->
           </a>
 
         </li>
