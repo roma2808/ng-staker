@@ -35,13 +35,17 @@
     </mat-form-field>
   </div>
 
+  <div class="text-left">
+    <small>Your balance: <span class="text-primary">{{balance}}</span> NU</small>
+  </div>
+
   <div class="mt-3">
     <button
       (click)="openDialog()"
       mat-raised-button
       color="primary"
       [disabled]="!(myForm.valid && isMetamaskConnected)"
-      class="btn btn-rounded pt-2 pb-2 pl-5 pr-5">
+      class="btn btn-rounded pt-1 pb-1 pl-5 pr-5">
       Stake it!
     </button>
   </div>
