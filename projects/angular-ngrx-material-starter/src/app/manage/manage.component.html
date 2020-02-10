@@ -32,10 +32,38 @@
       </form>
 
     </mat-tab>
-    <mat-tab label="Detach worker"> <button (click)="detachWorker()" mat-raised-button color="primary"
-  >
-      detach Worker
-     </button> </mat-tab>
+    <mat-tab label="Detach worker">
+      <form [formGroup]="myForm2" class="example-form">
+        <div class="d-flex flex-column justify-content-center align-items-center">
+          <!-- <button
+            (click)="detachWorker()"
+            mat-raised-button color="primary">
+          </button> -->
+          <mat-checkbox>Detach worker?</mat-checkbox>
+
+          <div class="text-center mt-2">
+            <small class="text-primary">or</small>
+          </div>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Set new worker address</mat-label>
+            <input matInput formControlName="worker" placeholder="x0">
+            <mat-error *ngIf="myForm2.get('worker').hasError('required')">
+              Address is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <button
+            (click)="setWorker()"
+            mat-raised-button color="primary"
+            [disabled]="!(myForm2.valid)"
+            class="btn btn-rounded pt-1 pb-1 pl-5 pr-5 mt-4">
+            Confirm
+          </button>
+
+        </div>
+      </form>
+    </mat-tab>
     <mat-tab label="Re-stake">
 
       <button (click)="restake()" mat-raised-button color="primary" *ngIf="!isReStakeLocked">   Enable
