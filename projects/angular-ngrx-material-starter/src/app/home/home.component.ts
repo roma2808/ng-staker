@@ -128,7 +128,7 @@ const tx= await this.web3.prolongStake(value.index,value.periods);
 const tx= await this.web3.divideStake(value.index,value.amount.toLocaleString('fullwide', {useGrouping:false}) ,value.periods);
   }
 
-  async changeTheme(i) {
+  async changeTheme() {
     const theme = this.checked ? 'BLACK-THEME' : 'LIGHT-THEME';
     this.store.dispatch(actionSettingsChangeTheme({ theme }));
   }
