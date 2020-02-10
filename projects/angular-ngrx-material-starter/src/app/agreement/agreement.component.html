@@ -3,16 +3,31 @@
     (nucypherStaker) london@london:~$ nucypher stake create</p>
     <img [src]="agreement1"/>
     <img [src]="agreement2"/> -->
-    <h2 mat-dialog-title>Stake nucypher</h2>
-    <mat-dialog-content class="mat-typography">
+    <h2 mat-dialog-title>
+      <mat-icon aria-hidden="false">close</mat-icon>
+    </h2>
+    <mat-dialog-content class="mat-typography text-left">
         <p>nucypher stake create
             /**
-            (nucypherStaker) london@london:~$ nucypher stake create</p>
-            <img [src]="agreement1"/>
-            <img [src]="agreement2"/> 
+            (nucypherStaker) london@london:~$ nucypher stake create
+        </p>
+        <code class="console">
+          Staking address: 0xe256B2A4185E4c5E42210bdA10033B561fB9493B
+
+          ~ Value -> 45000 NU (45000000000000000000000 NuNits) ~ Duration -> 365 Days (365 Periods) * Ursula Node Operator Notice * By agreeing to stake XXXXX NU (XXXXXXXXXXXXXXXXXXXXXXXX NuNits): - Staked tokens will be locked for the stake duration. - You are obligated to maintain a networked and available Ursula-Worker node bonded to the staker address 0xe256B2A4185E4c5E42210bdA10033B561fB9493B for the duration of the stake(s) (365 periods). - Agree to allow NuCypher network users to carry out uninterrupted re-encryption work orders at-will without interference. Failure to keep your node online, or violation of re-encryption work orders will result in the loss of staked tokens as described in the NuCypher slashing protocol. Keeping your Ursula node online during the staking period and successfully producing correct re-encryption work orders will result in rewards paid out in ethers retro-actively and on-demand.
+        </code>
+            <!-- <img [src]="agreement1"/>
+            <img [src]="agreement2"/> -->
     </mat-dialog-content>
-    <mat-dialog-actions align="end">
-      <button mat-button mat-dialog-close>Cancel</button>
-      <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+    <mat-dialog-actions align="center">
+      <small class="mt-2">
+        <mat-checkbox>Accept ursula node operator obligation</mat-checkbox>
+      </small>
+      <button
+        mat-button
+        [mat-dialog-close]="true"
+        cdkFocusInitial
+        class="btn btn-rounded pt-1 pb-1 pl-5 pr-5 mt-2 mb-2">
+        Confirm
+      </button>
     </mat-dialog-actions>
-    
