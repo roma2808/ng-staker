@@ -1,45 +1,43 @@
 @import '~@angular/material/theming';
 
-@mixin anms-about-component-theme($theme) {
+@mixin anms-home-component-theme($theme) {
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
 
-  anms-about {
-    .background {
-      color: mat-color($foreground, text);
-      background-color: mat-color($background, background);
+  .account-btn {
+    background-color: mat-color($background, disabled-button-toggle);
+  }
 
-      .gradient {
-        &::before {
-          background: linear-gradient(
-            to bottom,
-            mat-color($background, background, 0) 0%,
-            mat-color($background, background, 1) 100%
-          );
+  #theme-toggle {
+    .mat-slide-toggle-bar {
+      background-color: mat-color($background, dialog-content);
+      width: 66px;
+      height: 25px;
+      border-radius: 16px;
+
+      .mat-slide-toggle-thumb-container {
+        top: 0;
+        width: 35px;
+        height: 25px;
+
+        .mat-slide-toggle-thumb {
+          width: 35px;
+          height: 25px;
+          border-radius: 28px;
+          box-shadow: none;
         }
       }
     }
 
-    .follow-releases,
-    .contributors {
-      p {
-        background-color: mat-color($background, background);
+    &.mat-checked {
+      .mat-slide-toggle-thumb-container {
+        transform: translate3d(30px,0,0);
 
-        a {
-          color: mat-color($accent);
-
-          &:hover {
-            color: mat-color($accent, darker);
-          }
+        .mat-slide-toggle-thumb {
+          background-color: mat-color($background, toggle);
         }
-      }
-    }
-
-    .contributors {
-      img {
-        border-color: mat-color($background, background) !important;
       }
     }
   }
