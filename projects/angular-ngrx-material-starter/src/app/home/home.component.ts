@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
 
   TokenToWithdraw: number;
 
-  checked = false;
+  checked = true;
 
   constructor(private web3 :Web3Service,private dialog: MatDialog, private store: Store<State>) {}
   isMetamaskConnected: boolean;
