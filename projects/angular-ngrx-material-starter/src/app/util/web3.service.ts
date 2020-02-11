@@ -107,12 +107,13 @@ this.init_contracts()
         this.watchAccountUnlock();
     } else {
         this. web3.eth.defaultAccount = accounts[0];
-       this. requestSignature();
+     //  this. requestSignature();
     }
 
 }
 
-private requestSignature() {
+ requestSignature():any {
+  return new Promise(resolve => {
     this.web3.currentProvider.sendAsync({
       method: 'eth_signTypedData',
       params: [msgParams, this. web3.eth.defaultAccount],
@@ -121,18 +122,21 @@ private requestSignature() {
       if (err) return console.error(err)
       if (result.error) {
         // User denied signature
+        resolve( false);
       }
-      const signature = result.result;
-      alert(signature);
+     
+      resolve( result.result);
 
     });
-}
+
+});
+   }
 private watchAccountUnlock() {
     const toClear = setInterval(() => {
        this. web3.eth.getAccounts((err, accounts) => {
             if (accounts[0] !== this. web3.eth.defaultAccount) {
                 this. web3.eth.defaultAccount = accounts[0];
-                this.requestSignature();
+               // this.requestSignature();
                 clearInterval(toClear);
             }
         });

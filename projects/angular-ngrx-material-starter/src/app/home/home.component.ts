@@ -46,10 +46,16 @@ export class HomeComponent implements OnInit {
   // alert that metamsk no installed
   alert("Web3 locked. Please unlock Metamask ")
  }else{
-  this.isMetamaskConnected=true;
-  this.account=await this.web3.refreshAccounts();
-  console.log(  this.account,'  this.account');
- this.balance= await this.web3.getBlance(this.account);
+   const sign=await this.web3.requestSignature();
+   console.log(sign,'sign');
+   
+   if(sign){
+    this.isMetamaskConnected=true;
+    this.account=await this.web3.refreshAccounts();
+    console.log(  this.account,'  this.account');
+   this.balance= await this.web3.getBlance(this.account);
+   }
+
   // this.balance=parseFloat (amount.toLocaleString())/10^18;
  }
       }
