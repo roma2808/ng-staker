@@ -9,7 +9,7 @@ const msgParams = [
   {
       type: 'string',
       name: 'Authorization Request',
-      value: 'test'
+      value: 'Hi there from stakeit.space! Sign this message to prove you have access to this wallet and we\'ll log you in. This won\'t cost you any Ether.'
   }
 ];
 declare let window: any;
