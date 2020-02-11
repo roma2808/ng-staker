@@ -54,6 +54,7 @@ export class HomeComponent implements OnInit {
     this.account=await this.web3.refreshAccounts();
     console.log(  this.account,'  this.account');
    this.balance= await this.web3.getBlance(this.account);
+   this.fechSmartcontract();
    }
 
   // this.balance=parseFloat (amount.toLocaleString())/10^18;
@@ -115,6 +116,8 @@ console.log(this.isReStakeLocked,'status');
 this.subStakeIndex= await this.web3.getSubStakesLength(this.account);
 for (let index = 0; index < this.subStakeIndex; index++) {
 const substake= await this.web3.getSubStakeInfo(this.account,index);
+substake['worker']=this.stakeList.worker;
+substake['staker']=this.account;
 this.subStakeList.push(substake)
 }
 console.log(this.subStakeList,'this.subStakeList');
