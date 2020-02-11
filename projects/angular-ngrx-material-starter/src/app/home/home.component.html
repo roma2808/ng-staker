@@ -23,7 +23,7 @@
       </div>
       <ng-container>
         <div class="inner-container">
-          <mat-tab-group mat-align-tabs="center" class="tab-group">
+          <mat-tab-group id="main-tab-group" mat-align-tabs="center" class="tab-group">
 
             <mat-tab label="STAKE">
               <anms-stake (onSave)="saveStake($event)" [isMetamaskConnected]="isMetamaskConnected" class=" tab">

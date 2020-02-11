@@ -10,6 +10,12 @@
     background-color: mat-color($background, disabled-button-toggle);
   }
 
+  #main-tab-group {
+    .mat-tab-label {
+      width: 33.3333%;
+    }
+  }
+
   #theme-toggle {
     .mat-slide-toggle-bar {
       background-color: mat-color($background, dialog-content);

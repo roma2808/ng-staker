@@ -95,6 +95,12 @@ button.btn {
   background: rgba(205, 205, 205, 0.1);
 }
 
+.mat-tab-body-wrapper {
+  .mat-tab-body-content {
+    overflow: hidden;
+  }
+}
+
 #wallet-popup {
   padding-bottom: 0px;
 }
