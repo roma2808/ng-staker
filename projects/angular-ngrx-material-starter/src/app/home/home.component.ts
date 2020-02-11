@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(WalletPopupComponent, {
-
+      id: 'wallet-popup',
     });
 
     dialogRef.afterClosed().subscribe(async (result) => {
