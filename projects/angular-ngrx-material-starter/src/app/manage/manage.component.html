@@ -73,7 +73,19 @@
             <small>Re-staking for 0x0000....0000: <span class="text-primary">No</span></small>
           </div>
 
-          <button
+          <mat-button-toggle-group
+            name="restake-options"
+            aria-label="Restake options"
+            class="mt-2">
+            <mat-button-toggle
+              value="on">On</mat-button-toggle>
+            <mat-button-toggle
+              value="off">Off</mat-button-toggle>
+            <mat-button-toggle
+              value="lock">Lock for</mat-button-toggle>
+          </mat-button-toggle-group>
+
+          <!-- <button
             (click)="restake()"
             mat-raised-button
             color="primary"
@@ -87,7 +99,7 @@
             color="primary"
             *ngIf="isReStakeLocked">
             disable
-          </button>
+          </button> -->
 
           <button
             (click)="setWorker()"
@@ -111,11 +123,21 @@
             <small>Wind-down for 0x0000....0000: <span class="text-primary">No</span></small>
           </div>
 
-          <button
+          <mat-button-toggle-group
+            name="winddown-options"
+            aria-label="Wind-down options"
+            class="mt-2">
+            <mat-button-toggle
+              value="on">On</mat-button-toggle>
+            <mat-button-toggle
+              value="off">Off</mat-button-toggle>
+          </mat-button-toggle-group>
+
+          <!-- <button
             (click)="winddown()"
             mat-raised-button color="primary" >
             Winddown
-          </button>
+          </button> -->
 
           <button
             (click)="setWorker()"

@@ -24,6 +24,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatSliderModule } from '@angular/material/';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material';
+import { MatButtonToggleModule } from '@angular/material';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -119,6 +120,7 @@ import { RtlSupportDirective } from './rtl-support/rtl-support.directive';
     MatSnackBarModule,
     MatSlideToggleModule,
     MatDividerModule,
+    MatButtonToggleModule,
 
     FontAwesomeModule
   ],
@@ -154,6 +156,7 @@ import { RtlSupportDirective } from './rtl-support/rtl-support.directive';
     MatSliderModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatButtonToggleModule,
 
     FontAwesomeModule,
 

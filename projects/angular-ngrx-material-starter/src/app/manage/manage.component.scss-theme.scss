@@ -18,4 +18,13 @@
       }
     }
   }
+
+  .mat-button-toggle-group {
+    border: none;
+
+    .mat-button-toggle-checked {
+      background-color: mat-color($primary);
+      color: mat-color($foreground, base);
+    }
+  }
 }
