@@ -4,7 +4,9 @@
     <img [src]="agreement1"/>
     <img [src]="agreement2"/> -->
     <h2 mat-dialog-title>
-      <mat-icon aria-hidden="false">close</mat-icon>
+      <a href="#">
+        <mat-icon aria-hidden="false" (click)="dialogRef.close()">close</mat-icon>
+      </a>
     </h2>
     <mat-dialog-content class="mat-typography text-left">
         <p>nucypher stake create

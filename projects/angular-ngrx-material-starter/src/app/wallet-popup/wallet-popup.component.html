@@ -1,5 +1,7 @@
 <div mat-dialog-title>
-  <mat-icon aria-hidden="false">close</mat-icon>
+  <a href="#">
+    <mat-icon aria-hidden="false" (click)="dialogRef.close()">close</mat-icon>
+  </a>
 </div>
 <mat-dialog-content class="mat-typography">
   <p>Connect a wallet to get started</p>
