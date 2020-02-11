@@ -7,16 +7,17 @@
   $background: map-get($theme, background);
 
   mat-dialog-container {
-    padding: 16px 16px 24px;
+    padding: 9px 16px 24px;
     width: 460px;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.8) !important;
 
     .mat-dialog-title {
-      margin-bottom: 16px;
+      margin-bottom: 9px;
       line-height: 1;
       text-align: right;
 
       mat-icon {
-        font-size: 1em;
+        font-size: 1.25em;
         width: 1em;
         height: 1em;
       }

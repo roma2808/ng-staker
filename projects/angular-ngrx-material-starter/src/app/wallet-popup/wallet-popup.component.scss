@@ -90,15 +90,17 @@
   }
   .list-wallet li {
     margin: 0.5em;
-    width: 12em;
+    width: 11.5em;
   }
   .list-wallet li a {
     display: block;
     box-sizing: border-box;
     border-radius: 10px;
     text-align: center;
-    padding: 1rem 1.5rem;
-    text-align: left;
+    padding: 0.7rem 1.5rem;
+    text-align: center;
+    font-weight: 500;
+    min-height: 3rem;
   }
   .list-wallet li .img {
     vertical-align: middle;
