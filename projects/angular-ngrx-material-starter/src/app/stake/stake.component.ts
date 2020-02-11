@@ -25,10 +25,10 @@ export class StakeComponent implements OnInit {
   createForm() {
     return this.fb.group({
       amount: [
-        15000,
+        null,
         [Validators.required, Validators.min(15000)]
       ],
-      duration: [30, [Validators.required, Validators.min(30)]]
+      duration: [null, [Validators.required, Validators.min(30)]]
     });
   }
 
