@@ -26,14 +26,14 @@ $mat-dark-theme-background: (
 
 $mat-dark-theme-foreground: (
   base:              white,
-  divider:           $light-dividers,
+  divider:           #6A6A6A,
   dividers:          $light-dividers,
   disabled:          $light-disabled-text,
   disabled-button:   rgba(white, 0.3),
   disabled-text:     $light-disabled-text,
   elevation:         black,
   hint-text:         $light-disabled-text,
-  secondary-text:    $light-secondary-text,
+  secondary-text:    #6A6A6A,
   icon:              white,
   icons:             white,
   text:              #6A6A6A,
