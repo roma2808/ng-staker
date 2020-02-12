@@ -16,6 +16,7 @@ export class StakeComponent implements OnInit {
   myForm: FormGroup;
   isEditing: boolean;
   @Input() isMetamaskConnected ;
+  @Input() balance;
   @Output() onSave = new EventEmitter<any>();
   constructor(private fb: FormBuilder,private dialog: MatDialog) {
     this.myForm = this.createForm();
