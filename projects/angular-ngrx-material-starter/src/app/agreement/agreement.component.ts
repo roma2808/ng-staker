@@ -14,6 +14,8 @@ export class AgreementComponent {
     private dialogRef: MatDialogRef<AgreementComponent>,
     @Inject(MAT_DIALOG_DATA) public data) {}
 
+  checked = false;
+
   onNoClick(): void {
     this.dialogRef.close();
   }
