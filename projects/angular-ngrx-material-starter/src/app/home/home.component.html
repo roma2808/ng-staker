@@ -3,22 +3,22 @@
     <div class="container">
       <div class="row mt-4 pt-2">
         <div class="col-md-9"> </div>
-        <div class="col-md-3 text-right" *ngIf="!isMetamaskConnected">
-          <button mat-raised-button (click)="openDialog()"
+        <div class="col-md-3 text-right">
+          <button
+            *ngIf="!isMetamaskConnected"
+            mat-raised-button
+            (click)="openDialog()"
             class="btn btn-rounded btn-small"
             color="primary">Connect to a wallet</button>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-9"> </div>
-        <div class="col-md-3 img-dev" *ngIf="isMetamaskConnected">
-          <button mat-raised-button
+          <button
+            *ngIf="isMetamaskConnected"
+            mat-raised-button
             class="btn btn-rounded btn-small account-btn">
             <!-- <span>
               <img [src]="accImag" alt=""/>
             </span> -->
             {{account.substring(0,10)}}....{{account.substring(account.length -5,account.length)}}
-          </button>
+            </button>
         </div>
       </div>
       <ng-container>
