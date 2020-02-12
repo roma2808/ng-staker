@@ -10,7 +10,7 @@ $mat-dark-theme-background: (
   background: #0A0D0E,
   hover:      rgba(white, 0.04),
   card:       map_get($mat-grey, 800),
-  dialog:     map_get($mat-grey, 800),
+  dialog:     #303030,
   disabled-button: rgba(white, 0.12),
   raised-button: map-get($mat-grey, 800),
   focused-button: $light-focused,
