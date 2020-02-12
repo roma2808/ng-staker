@@ -41,7 +41,7 @@ export class StakeComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AgreementComponent, {
-
+      id: 'agreement-popup'
     });
 
     dialogRef.afterClosed().subscribe(result => {
