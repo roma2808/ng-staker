@@ -14,6 +14,10 @@
     .mat-tab-label {
       width: 33.3333%;
     }
+
+    > .mat-tab-body-wrapper {
+      height: 21em;
+    }
   }
 
   #theme-toggle {
